@@ -574,7 +574,7 @@ $ {
 #### 请求举例
 
 ```shell
-$ curl -XGET http://api.bizhihui.info/v1/getcoinlist？token={token}
+$ curl -XGET http://api.bizhihui.info/v1/getcoinlist?token={token}
 ```
 
 #### 返回结果
