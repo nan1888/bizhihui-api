@@ -573,8 +573,7 @@ $ {
 
 #### 请求举例
 
-```
-shell
+```shell
 $ curl -XGET http://api.bizhihui.info/v1/getcoinlist
 ```
 
