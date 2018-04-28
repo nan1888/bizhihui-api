@@ -335,7 +335,7 @@ $ curl -XGET http://api.bizhihui.info/v1/message?token={token}&limit=1
 }
 ```
 
-获取最新咨询
+获取最新资讯
 ---
 |接口|版本|描述|
 |---|---|---|
