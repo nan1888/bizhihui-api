@@ -455,7 +455,7 @@ $ curl -XGET http://api.bizhihui.info/v1/news?token={token}&limit=1
 |---|---|---|---|
 |quote|string|币种|必选|
 |base|string|对应现实的货币|必选|
-|platform|string|选择不同的交易市场|必选|
+|platform|string|选择不同的交易市场|必选 |
 
 #### 请求举例
 
