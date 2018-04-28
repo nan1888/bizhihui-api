@@ -59,7 +59,7 @@ API列表
 |[/v1/message](#获取最新快讯)||获取最新快讯|
 |[/v1/news](#获取最新资讯)||获取最新资讯|
 |[/v1/ticker](#获取ticker)||获取ticker|
-|[/v1/records](#获取K线)||获取K线|
+|[/v1/records](#获取k线)||获取K线|
 |[/v1/getexchangepair](#获取交易对接口)||获取交易对接口|
 |[/v1/getcoinlist](#获取币种列表)||获取币种列表|
 
@@ -461,7 +461,7 @@ $ curl -XGET http://api.bizhihui.info/v1/news?token={token}&limit=1
 #### 请求举例
 
 ```shell
-$ curl -XGET http://api.bizhihui.info/v1/ticker?quote=btc&base=usdt&platform=huobipro
+$ curl -XGET http://api.bizhihui.info/v1/ticker?quote=btc&base=usdt&platform=huobipro&token={token}
 ```
 
 #### 返回结果
@@ -502,7 +502,7 @@ $ {
 #### 请求举例
 
 ```shell
-$ curl -XGET http://api.bizhihui.info/v1/records?quote=btc&base=usdt&platform=huobipro&type=1h&since=123123123&size=60
+$ curl -XGET http://api.bizhihui.info/v1/records?quote=btc&base=usdt&platform=huobipro&type=1h&since=123123123&size=60&token={token}
 ```
 
 #### 返回结果
@@ -541,7 +541,7 @@ $ {
 #### 请求举例
 
 ```shell
-$ curl -XGET http://api.bizhihui.info/v1/getexchangepair?platform=binance
+$ curl -XGET http://api.bizhihui.info/v1/getexchangepair?platform=binance&token={token}
 ```
 
 #### 返回结果
@@ -574,7 +574,7 @@ $ {
 #### 请求举例
 
 ```shell
-$ curl -XGET http://api.bizhihui.info/v1/getcoinlist
+$ curl -XGET http://api.bizhihui.info/v1/getcoinlist？token={token}
 ```
 
 #### 返回结果
