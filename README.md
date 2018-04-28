@@ -330,9 +330,9 @@ $ curl -XGET http://api.bizhihui.info/v1/message?token={token}&limit=1
 
 #### 参数列表
 
-|参数名|参数类型|描述|
+|参数名|参数类型|描述|是否必选|
 |---|---|---|---|
-|limit|number|数量最大为100|
+|limit|number|数量最大为100|必选|
 
 #### 请求举例
 
@@ -432,16 +432,16 @@ $ curl -XGET http://api.bizhihui.info/v1/news?token={token}&limit=1
 
 
 |接口|版本|描述|
-|---|---|---|---|
+|---|---|---|
 |[/v1/ticker](#获取ticker)|获取ticker|
 
 获取ticker
 ---
-|参数名|参数类型|描述|
-|---|---|---|
-|quote|string|币种|
-|base|string|对应现实的货币|
-|platform|string|选择不同的交易市场|
+|参数名|参数类型|描述|是否必选|
+|---|---|---|---|
+|quote|string|币种|是否必选|
+|base|string|对应现实的货币|必选|
+|platform|string|选择不同的交易市场|必选|
 
 #### 请求举例
 
@@ -470,7 +470,7 @@ $ {
 ```
 
 |接口|版本|描述|
-|---|---|---|---|
+|---|---|---|
 |[/v1/records](#获取K线)|获取K线|
 
 获取K线
@@ -511,7 +511,7 @@ $ {
 
 ```
 |接口|版本|描述|
-|---|---|---|---|
+|---|---|---|
 |[/v1/getexchangepair](#获取交易对接口)|获取交易对接口|
 
 获取交易对接口
@@ -543,7 +543,7 @@ $ {
 ```
 ```
 |接口|版本|描述|
-|---|---|---|---|
+|---|---|---|
 |[/v1/getcoinlist](#获取币种列表)|获取币种列表|
 
 获取币种列表
@@ -598,5 +598,4 @@ platform支持
 |`coincheck`|coincheck|
 |`allcoin`|allcoin|
 |`okcoin-intl`|okcoin-intl|
-
 
