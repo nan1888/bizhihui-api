@@ -646,7 +646,6 @@ platform支持
 |`allcoin`|allcoin|
 |`okcoin-intl`|okcoin-intl|
 
-```
 
 
 获取异动资讯
