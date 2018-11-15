@@ -65,6 +65,9 @@ API列表
 |[/v1/getexchangepair](#获取交易对接口)||获取交易对接口|
 |[/v1/getcoinlist](#获取币种列表)||获取币种列表|
 |[/v1/getchangemsg](#获取异动资讯)||获取异动资讯|
+|[/v1/getchangemsg](#获取异动资讯)||获取异动资讯|
+|[/v1/getchangeindex](#获取异动指数)||获取异动指数|
+|[/v1/getchangeevent](#获取异动事件列表)||获取异动事件列表|
 
 
 获取币种基本信息
@@ -688,3 +691,116 @@ $ {
 |----|----|
 |`500`|参数错误|
 |`200`|请求成功|
+
+
+
+获取异动指数
+---
+|接口|版本|描述|
+|---|---|---|
+|[/v1/getchangeindex](#获取异动指数)||获取异动指数|
+
+#### 参数列表
+|参数名|参数类型|描述|是否必选|
+|---|---|---|---|
+
+#### 请求举例
+
+```shell
+$ curl -XGET http://api.bizhihui.info/v1/getchangeindex?token={token}
+```
+
+#### 返回结果
+
+```shell
+{
+    "data": {
+        "error": 0, // 错误码，0表示无错误
+        "result": {
+            "index": "100", // 异动指数
+            "text": "当前市场交易波动高，成交额异动明显高于历史数据，多空、涨跌异动较明显，建议关注。" // 异动文案
+        }
+    }
+}
+```
+
+
+
+获取异动事件列表
+---
+|接口|版本|描述|
+|---|---|---|
+|[/v1/getchangeevent](#获取异动事件列表)||获取异动事件列表|
+
+#### 参数列表
+|参数名|参数类型|描述|是否必选|
+|---|---|---|---|
+
+#### 请求举例
+
+```shell
+$ curl -XGET http://api.bizhihui.info/v1/getchangeevent?token={token}
+```
+
+#### 返回结果
+
+```json
+{
+    "data": {
+        "error": 0, // 错误码，0表示无错误
+        "items": [
+            {
+                "changes": [ // 异动列表的表格数据
+                    {
+                        "_id": "5becc5124b0b27fde08d7c54",
+                        "change": 7.828494095691138, // 异动值的增量，即对比上一次计算时的value值的增减量
+                        "change_abs": 7.828494095691138, // 异动的增量绝对值
+                        "change_fmt": "+782.85%", // 异动值的增量格式化后的字符串
+                        "cn": "卡西诺币", // 币种中文名
+                        "name": "volume", // 异动类型
+                        "name_cn": "成交额异动", // 异动类型中文名
+                        "percent_change_8am": -1.0918158292770386, // 币种当日涨跌（数据基于Coinmarketcap计算，早上8am开盘）
+                        "percent_change_8am_str": "-1.09%", // 币种当日涨跌格式化后的字符串
+                        "price_cny_str": "¥ 0.002", // 币种价格，人民币，格式化后的字符串
+                        "price_line": "https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/45.png?_t=1542268020290", // 币种价格最近7日曲线
+                        "price_local_str": "0.002", // 币种价格，本地化货币单位，默认人民币
+                        "symbol": "CSC", // 币种symbol，来源Coinmarketcap
+                        "symbol_id": "casinocoin", // 币种id，来源Coinmarketcap
+                        "update_time": 1542243600004, // 数据计算时间
+                        "value": 218679.28125, // 异动值
+                        "value_fmt": "21.87万" // 异动值格式化后的字符串
+                    }
+                ],
+                "cn": "成交额异动", // 异动类型中文名
+                "enable": 1,
+                "event_name": "bzh_unusual_volume",
+                "format": {
+                    "change": "percent",
+                    "value": "number"
+                },
+                "frequency": "1h", // 数据计算间隔
+                "length": 10, // changes数组的长度
+                "menus": [ // 异动列表的表头菜单
+                    {
+                        "cn": "币种",
+                        "name": "name"
+                    },
+                    {
+                        "cn": "24h成交额(CNY)", // changes数组中value值的含义
+                        "name": "volume"
+                    },
+                    {
+                        "cn": "7天价格趋势/当日涨跌",
+                        "name": "trend"
+                    }
+                ],
+                "name": "volume", // 异动类型
+                "open": 1,
+                "size": 10,
+                "update_time": 1542243600004,
+                "update_time_str": "11.15 09:00"
+            }
+        ]
+    }
+}
+```
